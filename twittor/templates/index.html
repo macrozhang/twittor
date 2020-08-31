@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- <h1>hello, {{name.username}}</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Age</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.Name }}</td>
+                <td>{{ row.Age }}</td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table> -->
+
+    <!-- {% for post in posts: %}
+    <table>
+        <tr>
+            <td>{{post.author.username}}</td>
+            <td>{{post.body}}</td>
+        </tr>
+    </table>
+    {% endfor%} -->
+    
+    <!-- 以下诸如{/{  }/}语法 皆为flask jinja2 的template （对大括号打不出来，否则编译错误，中间用斜线分割）-->
+    
+    <h1>Hello, {{name.username}}</h1>
+    {% for post in posts: %}
+    <div>
+        <p>{{post.author.username}} says: <b>{{post.body}}</b> </p>
+    </div>
+    {% endfor %}
+
+    
+{% endblock %}
